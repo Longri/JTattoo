@@ -23,8 +23,20 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Insets;
+import java.awt.LayoutManager;
+
+import javax.swing.BorderFactory;
+import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicSpinnerUI;
@@ -39,7 +51,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
      * missing (null) editor/nextButton/previousButton children.
      */
     private static final Dimension zeroSize = new Dimension(0, 0);
-
+    private static final Color     fieldBorderColor = new Color(127, 157, 185);
     private MyLayoutManager myLayoutManager = null;
 
     /**
@@ -52,6 +64,11 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
      */
     public static ComponentUI createUI(JComponent c) {
         return new BaseSpinnerUI();
+    }
+    
+    public void installDefaults() {
+      super.installDefaults();
+      spinner.setBorder(BorderFactory.createLineBorder(fieldBorderColor));
     }
 
     /**
@@ -77,10 +94,10 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
     protected Component createNextButton() {
         JButton button = new SpinButton(SwingConstants.NORTH);
         if (JTattooUtilities.isLeftToRight(spinner)) {
-            Border border = BorderFactory.createMatteBorder(0, 1, 1, 0, AbstractLookAndFeel.getFrameColor());
+            Border border = BorderFactory.createMatteBorder(0, 1, 1, 0, fieldBorderColor);
             button.setBorder(border);
         } else {
-            Border border = BorderFactory.createMatteBorder(0, 0, 1, 1, AbstractLookAndFeel.getFrameColor());
+            Border border = BorderFactory.createMatteBorder(0, 0, 1, 1, fieldBorderColor);
             button.setBorder(border);
         }
         installNextButtonListeners(button);
@@ -90,10 +107,10 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
     protected Component createPreviousButton() {
         JButton button = new SpinButton(SwingConstants.SOUTH);
         if (JTattooUtilities.isLeftToRight(spinner)) {
-            Border border = BorderFactory.createMatteBorder(0, 1, 0, 0, AbstractLookAndFeel.getFrameColor());
+            Border border = BorderFactory.createMatteBorder(0, 1, 0, 0, fieldBorderColor);
             button.setBorder(border);
         } else {
-            Border border = BorderFactory.createMatteBorder(0, 0, 0, 1, AbstractLookAndFeel.getFrameColor());
+            Border border = BorderFactory.createMatteBorder(0, 0, 0, 1, fieldBorderColor);
             button.setBorder(border);
         }
         installPreviousButtonListeners(button);
