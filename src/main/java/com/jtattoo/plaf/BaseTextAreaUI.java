@@ -56,7 +56,7 @@ public class BaseTextAreaUI extends BasicTextAreaUI {
     protected void installKeyboardActions() {
         super.installKeyboardActions();
         if (JTattooUtilities.isMac()) {
-            InputMap im = (InputMap) UIManager.get("TextField.focusInputMap");
+            InputMap im = (InputMap) UIManager.get("TextArea.focusInputMap");
             int commandKey = Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
             im.put(KeyStroke.getKeyStroke(KeyEvent.VK_C, commandKey), DefaultEditorKit.copyAction);
             im.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, commandKey), DefaultEditorKit.pasteAction);
