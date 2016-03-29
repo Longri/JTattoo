@@ -192,6 +192,7 @@ public class LunaLookAndFeel extends AbstractLookAndFeel {
             "RadioButtonMenuItemUI", BaseRadioButtonMenuItemUI.class.getName(),
             "PopupMenuSeparatorUI", BaseSeparatorUI.class.getName(),
             "DesktopPaneUI", BaseDesktopPaneUI.class.getName(),
+            "TextPaneUI", BaseTextPaneUI.class.getName(),
 
             // LunaLookAndFeel classes
             "ButtonUI", LunaButtonUI.class.getName(),
