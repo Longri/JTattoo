@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.tinymediamanager</groupId>
     <artifactId>JTattoo</artifactId>
-    <version>1.6.12.1</version>
+    <version>1.6.12.2</version>
     <packaging>jar</packaging>
     <name>JTattoo</name>
     <description>A LookAndFeel library for swing</description>
