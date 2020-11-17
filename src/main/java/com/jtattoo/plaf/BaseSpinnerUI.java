@@ -84,6 +84,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
      * @see #createPreviousButton
      * @see #createEditor
      */
+    @Override
     protected LayoutManager createLayout() {
         if (myLayoutManager == null) {
             myLayoutManager = new MyLayoutManager();
@@ -91,6 +92,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
         return myLayoutManager;
     }
 
+    @Override
     protected Component createNextButton() {
         JButton button = new SpinButton(SwingConstants.NORTH);
         if (JTattooUtilities.isLeftToRight(spinner)) {
@@ -104,6 +106,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
         return button;
     }
 
+    @Override
     protected Component createPreviousButton() {
         JButton button = new SpinButton(SwingConstants.SOUTH);
         if (JTattooUtilities.isLeftToRight(spinner)) {
@@ -132,6 +135,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             direction = aDirection;
         }
 
+        @Override
         public Dimension getPreferredSize() {
             Dimension size = super.getPreferredSize();
             size.width = Math.max(size.width, minSize.width);
@@ -139,14 +143,14 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             return size;
         }
 
+        @Override
         public void paint(Graphics g) {
             Color colors[];
             if (isEnabled()) {
-                ButtonModel model = getModel();
-                if (model.isPressed() && model.isArmed()) {
+                if (getModel().isPressed() && getModel().isArmed()) {
                     colors = AbstractLookAndFeel.getTheme().getPressedColors();
                 } else {
-                    if (model.isRollover())
+                    if (getModel().isRollover())
                         colors = AbstractLookAndFeel.getTheme().getRolloverColors();
                     else if (JTattooUtilities.isFrameActive(this))
                         colors = AbstractLookAndFeel.getTheme().getButtonColors();
@@ -176,15 +180,16 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
 
     }
 
-//----------------------------------------------------------------------------------------------
-// inner classes
-//----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
+    // inner classes
+    //--------------------------------------------------------------------------
     private static class MyLayoutManager implements LayoutManager {
 
         private Component nextButton = null;
         private Component previousButton = null;
         private Component editor = null;
 
+        @Override
         public void addLayoutComponent(String name, Component c) {
             if ("Next".equals(name)) {
                 nextButton = c;
@@ -195,6 +200,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             }
         }
 
+        @Override
         public void removeLayoutComponent(Component c) {
             if (c == nextButton) {
                 nextButton = null;
@@ -209,6 +215,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             return (c == null) ? zeroSize : c.getPreferredSize();
         }
 
+        @Override
         public Dimension preferredLayoutSize(Container parent) {
             Dimension nextD = preferredSize(nextButton);
             Dimension previousD = preferredSize(previousButton);
@@ -225,6 +232,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             return size;
         }
 
+        @Override
         public Dimension minimumLayoutSize(Container parent) {
             return preferredLayoutSize(parent);
         }
@@ -235,6 +243,7 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             }
         }
 
+        @Override
         public void layoutContainer(Container parent) {
             int width  = parent.getWidth();
             int height = parent.getHeight();
@@ -277,6 +286,6 @@ public class BaseSpinnerUI extends BasicSpinnerUI {
             setBounds(previousButton, buttonsX, previousY,  buttonsWidth, previousHeight);
         }
 
-    }
+    } // end of class MyLayoutManager
 
-}
+} // end of class BaseSpinnerUI
