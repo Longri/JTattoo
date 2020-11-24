@@ -55,12 +55,12 @@ public class NoireDefaultTheme extends AbstractTheme {
 
         // Defaults for NoireLookAndFeel
         textShadow = true;
-        foregroundColor = WHITE;
+        foregroundColor = new ColorUIResource(187, 187, 187);
         disabledForegroundColor = GRAY;
         disabledBackgroundColor = new ColorUIResource(48, 48, 48);
 
         backgroundColor = new ColorUIResource(24, 26, 28);
-        backgroundColorLight = new ColorUIResource(24, 26, 28);
+        backgroundColorLight = new ColorUIResource(41, 41, 41);
         backgroundColorDark = new ColorUIResource(4, 5, 6);
         alterBackgroundColor = new ColorUIResource(78, 84, 90);
 

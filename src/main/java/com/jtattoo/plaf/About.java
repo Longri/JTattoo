@@ -87,7 +87,8 @@ public class About extends JDialog {
      */
     public static void main(String args[]) {
         try {
-            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+//            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+            UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
             About dlg = new About();
             dlg.setSize(DLG_SIZE);
             dlg.setLocation(DLG_POS_X, DLG_POS_Y);

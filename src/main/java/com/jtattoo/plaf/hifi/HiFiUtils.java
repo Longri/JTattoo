@@ -42,11 +42,11 @@ public class HiFiUtils {
             int y = 2 - (p.y % 3);
             g.setColor(AbstractLookAndFeel.getTheme().getBackgroundColorLight());
             g.fillRect(0, 0, w, h);
-            g.setColor(AbstractLookAndFeel.getTheme().getBackgroundColorDark());
-            while (y < h) {
-                g.drawLine(0, y, w, y);
-                y += 3;
-            }
+//            g.setColor(AbstractLookAndFeel.getTheme().getBackgroundColorDark());
+//            while (y < h) {
+//                g.drawLine(0, y, w, y);
+//                y += 3;
+//            }
         } else {
             g.setColor(c.getBackground());
             g.fillRect(0, 0, c.getWidth(), c.getHeight());
