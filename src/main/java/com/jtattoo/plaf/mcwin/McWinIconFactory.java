@@ -111,24 +111,8 @@ public class McWinIconFactory implements AbstractIconFactory {
 
     @Override
     public Icon getIconIcon() {
-        return McWinIcons.getIconIcon();
+        return FastIcons.getIconIcon();
     }
-
-//    @Override
-//    public Icon getMaxIcon() {
-//        return McWinIcons.getMaxIcon();
-//    }
-//
-//    @Override
-//    public Icon getMinIcon() {
-//        return McWinIcons.getMinIcon();
-//    }
-//
-//    @Override
-//    public Icon getCloseIcon() {
-//        return McWinIcons.getCloseIcon();
-//    }
-
 
     @Override
     public Icon getMaxIcon() {
@@ -144,8 +128,6 @@ public class McWinIconFactory implements AbstractIconFactory {
     public Icon getCloseIcon() {
         return FastIcons.getCloseIcon();
     }
-
-
 
 
     @Override
