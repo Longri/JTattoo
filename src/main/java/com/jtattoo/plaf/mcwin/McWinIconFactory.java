@@ -23,6 +23,8 @@
 package com.jtattoo.plaf.mcwin;
 
 import com.jtattoo.plaf.AbstractIconFactory;
+import com.jtattoo.plaf.fast.FastIcons;
+
 import javax.swing.Icon;
 
 /**
@@ -112,20 +114,39 @@ public class McWinIconFactory implements AbstractIconFactory {
         return McWinIcons.getIconIcon();
     }
 
+//    @Override
+//    public Icon getMaxIcon() {
+//        return McWinIcons.getMaxIcon();
+//    }
+//
+//    @Override
+//    public Icon getMinIcon() {
+//        return McWinIcons.getMinIcon();
+//    }
+//
+//    @Override
+//    public Icon getCloseIcon() {
+//        return McWinIcons.getCloseIcon();
+//    }
+
+
     @Override
     public Icon getMaxIcon() {
-        return McWinIcons.getMaxIcon();
+        return FastIcons.getMaxIcon();
     }
 
     @Override
     public Icon getMinIcon() {
-        return McWinIcons.getMinIcon();
+        return FastIcons.getMinIcon();
     }
 
     @Override
     public Icon getCloseIcon() {
-        return McWinIcons.getCloseIcon();
+        return FastIcons.getCloseIcon();
     }
+
+
+
 
     @Override
     public Icon getPaletteCloseIcon() {
